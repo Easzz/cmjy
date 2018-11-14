@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>安训网</title>
+	<link type="text/css" rel="stylesheet" href="css/index.css">
+	<link type="text/css" rel="stylesheet" href="css/swiper-4.2.2.min.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/swiper-4.2.2.min.js"></script>
+</head>
+
+<body>
+<div class="top">
+	<div class="header">
+		<div class="logo">
+			<img src="images/logo.png" alt="安训网">
+			<p>广东安训科技有限公司</p>
+		</div>
+		<div class="topRight">珠三角最专业的安全生产培训平台</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<!-- 轮播图 -->
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide" style="background: url(images/banner01.png) center top no-repeat;"></div>
+		<div class="swiper-slide" style="background: url(images/banner02.png) center top no-repeat;"></div>
+		<div class="swiper-slide" style="background: url(images/banner03.png) center top no-repeat;"></div>
+		<div class="swiper-slide" style="background: url(images/banner04.png) center top no-repeat;"></div>
+		<div class="swiper-slide" style="background: url(images/banner05.png) center top no-repeat;"></div>
+	</div>
+	<div class="swiper-pagination"></div>
+</div>
+<script type="text/javascript">
+	var mySwiper = new Swiper('.swiper-container', {
+		autoplay: {
+			disableOnInteraction: false
+		},
+		loop : true, //可选选项，循环滑动
+		pagination: {
+			el: '.swiper-pagination',	//使用分页导航
+			bulletElement : 'li',	//自定义
+			clickable :true	//操作切换
+		}
+	});
+</script>
+<!-- 轮播图 -->
+<div class="footer">
+	<div class="leftText">
+		<ul>
+			<li><i class="address"></i>办公地址：广东省东莞市莞城区旗峰路200号万科城市广场</li>
+			<li><i class="phone"></i>客服热线：400 183 8228</li>
+			<li><i class="mail"></i>商务邮箱：<a href="mailto:anxunedu@163.com" target="_blank">anxunedu@163.com</a></li>
+			<li><i class="wechat"></i>安训网：扫一扫微信公众号</li>
+		</ul>
+		<!--<div class="copyright">版权所有Copyright © 2018 安训网　|　<a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备15019185号-2</a></div>-->
+
+	</div>
+	<div class="rightCode"><img src="images/erweima.png" alt="微信公众号"></div>
+
+	<div class="clear"></div>
+	<div class="copyright" style="text-align:center;">
+			<div style="width:300px;margin:0 auto; padding:20px 0;">
+		 		<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44190002002547" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="images/beian.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">粤公网安备 44190002002547号</p></a>
+			</div>
+		</div>
+</div>
+</body>
+</html>

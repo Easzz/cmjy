@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin: 0; padding: 0;}
+body{font-family: Arial, "Microsoft Yahei";}
+li{list-style: none;}
+a{text-decoration: none; color: #333;}
+img{vertical-align: top;}
+.clear{clear: both;}
+
+.top{width: 100%; min-width: 1200px; height: 120px; background: rgba(255, 255, 255, 0.05); position: absolute; z-index: 99;}
+.top .header{width: 1080px; margin: 0 auto; padding: 0 60px;}
+.top .header .logo{float: left; padding-top: 30px;}
+.top .header .logo p{font-size: 17px; color: #fff; padding-top: 8px;}
+.top .header .topRight{float: right; font-size: 18px; color: #fff; padding-top: 50px;}
+
+.swiper-container{min-width: 1200px; height: 740px;}
+.swiper-container .swiper-slide{height: 740px;}
+.swiper-container .swiper-pagination{bottom: 30px !important;}
+.swiper-container .swiper-pagination li{width: 24px; height: 2px; margin: 0 8px !important; background: #fff; cursor:pointer; border-radius: 0;}
+.swiper-container .swiper-pagination-bullet{opacity: 0.5;}
+.swiper-container .swiper-pagination-bullet-active{opacity: 1;}
+
+.footer{width: 1080px; margin: 0 auto; padding: 40px 60px;}
+.footer .leftText{float: left; font-size: 14px; line-height: 36px;}
+.footer .leftText li i{width: 26px; height: 26px; margin-right: 10px; display: inline-block; vertical-align: middle;}
+.footer .leftText li i.address{background: url(../images/address.png);}
+.footer .leftText li i.phone{background: url(../images/phone.png);}
+.footer .leftText li i.mail{background: url(../images/mail.png);}
+.footer .leftText li i.wechat{background: url(../images/wechat.png);}
+.footer .leftText .copyright{color: #999;}
+.footer .leftText .copyright a{color: #999;}
+.footer .rightCode{float: right;}
