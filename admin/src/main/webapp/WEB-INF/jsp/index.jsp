@@ -12,10 +12,10 @@
 <meta name="renderer" content="webkit">
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <title>主页</title>
-<link href="${projectPath }/css/bootstrap.min.css" rel="stylesheet">
-<link href="${projectPath }/css/font-awesome.min.css" rel="stylesheet">
-<link href="${projectPath }/css/animate.min.css" rel="stylesheet">
-<link href="${projectPath }/css/style.min.css" rel="stylesheet">
+<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/css/font-awesome.min.css" rel="stylesheet">
+<link href="/static/css/animate.min.css" rel="stylesheet">
+<link href="/static/css/style.min.css" rel="stylesheet">
 </head>
 
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
@@ -24,7 +24,7 @@
                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
                    <div style="float: right; height: 70px;">
                     <div style="float: left; width: 160px; padding: 11px 10px 11px 20px;">
-                        <span style="float: left; margin-right: 10px;"><img alt="image" class="img-circle" width="48" height="48" src="${projectPath }/img/man64.jpg"/></span>
+                        <span style="float: left; margin-right: 10px;"><img alt="image" class="img-circle" width="48" height="48" src="/static/img/man64.jpg"/></span>
                         <span class="clear">
                            <span class="block" style="font-size: 16px; color: #fff;">${loginUser.realName }</span>
                            <span class="block" style="font-size: 14px; color: #fff;">${loginUser.roleName }</span>
@@ -35,10 +35,10 @@
                             <i class="fa fa-cog" style="font-size: 20px; color: #fff;"></i>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        	<li><a class="J_menuItem" href="${projectPath }/modifypwd.action">修改密码</a>
+                        	<li><a class="J_menuItem" href="modifypwd.action">修改密码</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="${projectPath }/logout.action">安全退出</a></li>
+                            <li><a href="logout.action">安全退出</a></li>
                         </ul>
                     </div>
                    </div>
@@ -55,10 +55,6 @@
             </div>
             <div class="sidebar-collapse">
                 <ul class="nav" id="side-menu">
-                    <!-- <li class="nav-header">
-                        <div class="logo-element">H+
-                        </div>
-                    </li> -->
                     <c:forEach items="${loginUser.menus }" var="menu">
                     <li>
                         <a href="#">
@@ -86,7 +82,7 @@
                         <ul class="nav nav-second-level collapse in">
                         	<c:forEach items="${menu.menus }" var="children">
                             <li>
-                                <a class="J_menuItem" href="${projectPath }${children.url}" data-index="0" style="font-size: 14px;">${children.menuname }</a>
+                                <a class="J_menuItem" href="/static${children.url}" data-index="0" style="font-size: 14px;">${children.menuname }</a>
                             </li>
                             </c:forEach>
                         </ul>
@@ -108,10 +104,10 @@
                <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i></button>
            </div>
             <div class="row J_mainContent" id="content-main">
-                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="${projectPath }${welcomeUrl}"  frameborder="0" data-id="index_v1.html" seamless></iframe>
+                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="${welcomeUrl}"  frameborder="0" data-id="index_v1.html" seamless></iframe>
             </div>
             <div class="footer">
-                <div class="pull-right">Copyright &copy; 2017-2018 安训科技 版权所有
+                <div class="pull-right">Copyright &copy; 2017-2018 纯美教育 版权所有
                 </div>
             </div>
         </div>
@@ -119,7 +115,6 @@
         <!--右侧边栏开始-->
         <div id="right-sidebar">
             <div class="sidebar-container">
-
                 <ul class="nav nav-tabs navs-3">
 
                     <li class="active">
@@ -212,18 +207,9 @@
                     <div id="tab-2" class="tab-pane">
 
                         <div class="sidebar-title">
-                            <h3> <i class="fa fa-comments-o"></i> 最新通知</h3>
+                            <h3> <i class="fa fa-comments-o"></i> wefwefwwef最新通知</h3>
                             <small><i class="fa fa-tim"></i> 您当前有10条未读信息</small>
                         </div>
-
-                    </div>
-                    <div id="tab-3" class="tab-pane">
-
-                        <div class="sidebar-title">
-                            <h3> <i class="fa fa-cube"></i> 最新任务</h3>
-                            <small><i class="fa fa-tim"></i> 您当前有14个任务，10个已完成</small>
-                        </div>
-
 
                     </div>
                 </div>
@@ -231,14 +217,14 @@
             </div>
         </div>
     </div>
-<script src="${projectPath }/js/jquery.min.js"></script>
-<script src="${projectPath }/js/bootstrap.min.js" ></script>
-<script src="${projectPath }/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="${projectPath }/js/plugins/slimscroll/jquery.slimscroll.min.js" ></script>
-<script src="${projectPath }/js/plugins/layui/layer/layer.js" ></script>
-<script src="${projectPath }/js/hplus.min.js" ></script>
-<script src="${projectPath }/js/contabs.min.js" ></script>
-<script src="${projectPath }/js/plugins/pace/pace.min.js" ></script>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js" ></script>
+<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="/js/plugins/slimscroll/jquery.slimscroll.min.js" ></script>
+<script src="/static/js/plugins/layui/layer/layer.js" ></script>
+<script src="/static/js/hplus.min.js" ></script>
+<script src="/static/js/contabs.min.js" ></script>
+<script src="/static/js/plugins/pace/pace.min.js" ></script>
 
 </body>
 <script>
