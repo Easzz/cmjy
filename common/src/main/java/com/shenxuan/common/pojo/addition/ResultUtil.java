@@ -1,7 +1,7 @@
 package com.shenxuan.common.pojo.addition;
 
-
 import com.shenxuan.common.constans.MyConfig;
+import com.shenxuan.common.exception.CustomException;
 import com.shenxuan.common.utils.ResourcesUtil;
 
 import java.util.List;
@@ -17,7 +17,6 @@ public class ResultUtil {
 	/**
 	 * 创建错误结果
 	 * 
-	 * @param MESSAGE
 	 * @return
 	 */
 	public static ResultInfo createFail(String fileName, int messageCode, Object[] objs) {
@@ -72,9 +71,46 @@ public class ResultUtil {
 	}
 
 	/**
-	 * 创建成功的提交结果信息
+	 * 简单处理，抛出异常
+	 * @param messageCode 异常代码
+	 * @throws CustomException
+	 */
+	public static void throwCustomExcepion(int messageCode) throws CustomException {
+		String message=ResourcesUtil.getValue(MyConfig.MESSAGE, String.valueOf(messageCode));
+		ResultInfo resultInfo=new ResultInfo(ResultInfo.TYPE_RESULT_FAIL, messageCode, message);
+		throw new CustomException(resultInfo);
+	}
+	
+	/**
+	 * 简单处理，抛出异常
+	 * @param message 异常消息
+	 * @throws CustomException
+	 */
+	public static void throwCustomExcepion(String message) throws CustomException {
+		ResultInfo resultInfo=new ResultInfo(ResultInfo.TYPE_RESULT_FAIL, 0, message);
+		throw new CustomException(resultInfo);
+	}
+	
+	/**
+	 * 抛出异常
 	 * 
 	 * @param resultInfo
+	 */
+	public static void throwExcepion(ResultInfo resultInfo) throws CustomException {
+		//throw new ExceptionResultInfo(resultInfo);
+		throw new CustomException(resultInfo);
+	}
+
+	public static void throwExcepion(ResultInfo resultInfo, List<ResultInfo> details) throws CustomException {
+		if (resultInfo != null) {
+			resultInfo.setDetails(details);
+		}
+		throw new CustomException(resultInfo);
+	}
+	
+	/**
+	 * 创建成功的提交结果信息
+	 * 
 	 * @return
 	 */
 	public static SubmitResultInfo getSuccessSubmitResult() {

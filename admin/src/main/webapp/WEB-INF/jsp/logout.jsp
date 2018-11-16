@@ -72,7 +72,7 @@ var timeId= setInterval(function name() {
 //退出
 function logout(){
 	//由于可能出现多个父窗口，所以这里需要判断下
-	var loginUrl="${projectPath}/login.action";
+	var loginUrl="${projectPath}/login";
 	//页面跳转
 	if (parent.parent.parent) {
 		parent.parent.parent.location=loginUrl;

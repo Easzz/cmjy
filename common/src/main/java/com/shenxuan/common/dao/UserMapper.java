@@ -3,6 +3,7 @@ package com.shenxuan.common.dao;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.shenxuan.common.pojo.addition.UserCustom;
 import com.shenxuan.common.pojo.entity.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
  * @author sunmeng
  * @date 2017年1月4日上午11:40:08
  */
+@Mapper
 public interface UserMapper extends BaseMapper<User> {
 
 	/**

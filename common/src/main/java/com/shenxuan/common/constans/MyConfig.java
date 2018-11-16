@@ -11,7 +11,8 @@ public class MyConfig {
 	/**
 	 * 提示信息配置文件名
 	 */
-	public static final String MESSAGE = "resources.messages";
+	//public static final String MESSAGE = "resources.messages";
+	public static final String MESSAGE = "messages";
 
 	/**
 	 * 公共权限，登录后即可访问，不需要权限

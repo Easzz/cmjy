@@ -3,6 +3,7 @@ package com.shenxuan.common.dao;
 import com.shenxuan.common.pojo.entity.Role;
 import com.shenxuan.common.pojo.entity.RolePermission;
 import com.shenxuan.common.pojo.entity.RoleQuery;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
  * @author monkey
  * @date 2016年6月14日 下午6:51:42
  */
+@Mapper
 public interface RoleMapper extends BaseMapper<Role, RoleQuery, Role> {
 
 	/**

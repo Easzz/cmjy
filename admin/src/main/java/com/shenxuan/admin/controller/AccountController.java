@@ -78,7 +78,7 @@ public class AccountController {
 				//把登录用户保存到session中
 				session.setAttribute(MyConfig.LOGINUSER_KEY, loginUser);
 //				sessionProvider.setAttribute(request, MyConfig.LOGINUSER_KEY, loginUser);
-				return "redirect:/index.action";
+				return "redirect:/index";
 			}
 		}
 		request.setAttribute("msg", "用户名或密码错误！");
@@ -89,7 +89,7 @@ public class AccountController {
 	@RequestMapping("/index")
 	public String index(Model model, HttpSession session) {
 		//登录后的默认欢迎页面
-		String url = "/welcome.action";
+		String url = "/welcome";
 		model.addAttribute("welcomeUrl", url);
 		// 去主界面，拦截器中控制，如果没有登录，是访问不了它
 		return "index";
@@ -116,7 +116,7 @@ public class AccountController {
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) throws Exception {
 		session.invalidate();//session失效
-		return "redirect:/login.action";
+		return "redirect:/login";
 	}
 
 	//退出跳转页面

@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class},scanBasePackages="com.shenxuan")
 public class AdminApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
@@ -17,4 +17,13 @@ public class AdminApplication extends SpringBootServletInitializer {
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 		return builder.sources(AdminApplication.class);
 	}
+/*
+	@Bean
+	public ServletRegistrationBean servletRegistrationBean(DispatcherServlet dispatcherServlet) {
+		ServletRegistrationBean<DispatcherServlet> servletServletRegistrationBean = new ServletRegistrationBean<>(dispatcherServlet);
+		servletServletRegistrationBean.addUrlMappings("/*");
+		return servletServletRegistrationBean;
+	}
+*/
+
 }

@@ -35,10 +35,10 @@
                             <i class="fa fa-cog" style="font-size: 20px; color: #fff;"></i>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        	<li><a class="J_menuItem" href="modifypwd.action">修改密码</a>
+                        	<li><a class="J_menuItem" href="/modifypwd">修改密码</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="logout.action">安全退出</a></li>
+                            <li><a href="/logout">安全退出</a></li>
                         </ul>
                     </div>
                    </div>

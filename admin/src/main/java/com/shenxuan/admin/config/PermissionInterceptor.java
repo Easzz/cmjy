@@ -2,8 +2,8 @@ package com.shenxuan.admin.config;
 
 import com.shenxuan.common.constans.MyConfig;
 import com.shenxuan.common.pojo.addition.LoginUser;
+import com.shenxuan.common.pojo.addition.ResultUtil;
 import com.shenxuan.common.pojo.entity.Permission;
-import com.shenxuan.common.utils.ResourcesUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,22 +27,22 @@ public class PermissionInterceptor implements HandlerInterceptor {
 		String requestUrl = request.getRequestURI();
 
 		// 获取公开地址
-		List<String> openUrls = ResourcesUtil.gekeyList(MyConfig.ANONYMOUS_URL);
+		/*List<String> openUrls = ResourcesUtil.gekeyList(MyConfig.ANONYMOUS_URL);
 		// 遍历公开 地址，如果是公开 地址则放行 （前面拦截器判断了一次，这里还要判断的原因是因为走了前面直接走后面）
 		for (String openUrl : openUrls) {
 			if (requestUrl.contains(openUrl)) {
 				return true;
 			}
-		}
+		}*/
 
-		// 判断请求的url是否公共 地址-需登陆即可操作url
+		/*// 判断请求的url是否公共 地址-需登陆即可操作url
 		List<String> commonUrls = ResourcesUtil.gekeyList(MyConfig.COMMON_URL);
 		for (String commonUrl : commonUrls) {
 			if (requestUrl.contains(commonUrl)) {
 				return true;
 			}
 		}
-
+*/
 		// 获取登录用户
 		HttpSession session = request.getSession();
 		LoginUser loginUser = (LoginUser) session.getAttribute(MyConfig.LOGINUSER_KEY);
@@ -67,7 +67,7 @@ public class PermissionInterceptor implements HandlerInterceptor {
 		// 没有权限访问就去拒绝页面
 		//request.getRequestDispatcher("/WEB-INF/jsp/refuse.jsp").forward(request, response);
 		//这里改成抛出异常，像登录认证一样， 方便控制对于ajax请求没有权限时做出提示。
-	///	ResultUtil.throwCustomExcepion(MyConfig.NO_PERMISSION);
+		ResultUtil.throwCustomExcepion(MyConfig.NO_PERMISSION);
 
 		return false;
 	}
