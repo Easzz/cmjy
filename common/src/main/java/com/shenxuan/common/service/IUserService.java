@@ -1,6 +1,7 @@
 package com.shenxuan.common.service;
 
 import com.baomidou.mybatisplus.service.IService;
+import com.shenxuan.common.pojo.addition.UserCustom;
 import com.shenxuan.common.pojo.entity.User;
 
 /**
@@ -12,4 +13,5 @@ import com.shenxuan.common.pojo.entity.User;
 public interface IUserService extends IService<User> {
 
 
+	UserCustom selectByUsername(String username);
 }

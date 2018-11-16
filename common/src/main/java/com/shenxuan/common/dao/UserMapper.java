@@ -1,6 +1,7 @@
 package com.shenxuan.common.dao;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.shenxuan.common.pojo.addition.UserCustom;
 import com.shenxuan.common.pojo.entity.User;
 import org.apache.ibatis.annotations.Param;
 
@@ -49,5 +50,5 @@ public interface UserMapper extends BaseMapper<User> {
 	/**
 	 * 根据用户名查找所有用户
 	 */
-	User selectAllByUsername(String username);
+	UserCustom selectAllByUsername(String username);
 }
