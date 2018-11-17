@@ -14,8 +14,8 @@ public class WebConfig implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
-		registry.addResourceHandler("/img/**").addResourceLocations("classpath:/static/img/")
-		;
+		registry.addResourceHandler("/img/**").addResourceLocations("classpath:/static/img/");
+		registry.addResourceHandler("/js/**").addResourceLocations("classpath:/static/img/");
 	}
 
 	@Override
@@ -25,15 +25,18 @@ public class WebConfig implements WebMvcConfigurer {
 				.addPathPatterns("/**").excludePathPatterns("/login")
 				.excludePathPatterns("/static/**")
 				.excludePathPatterns("/img/**")
+				.excludePathPatterns("/js/**")
 		;
 		registry.addInterceptor(new PermissionInterceptor())
 				.addPathPatterns("/**").excludePathPatterns("/login")
 				.excludePathPatterns("/static/**")
+				.excludePathPatterns("/js/**")
 				.excludePathPatterns("/img/**")
 		;
 	}
 	@Override
 	public void configurePathMatch(PathMatchConfigurer configurer) {
-		configurer.setUseSuffixPatternMatch(true);
+		configurer.setUseSuffixPatternMatch(true)
+				.setUseTrailingSlashMatch(true);
 	}
 }

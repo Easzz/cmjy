@@ -82,7 +82,7 @@
                         <ul class="nav nav-second-level collapse in">
                         	<c:forEach items="${menu.menus }" var="children">
                             <li>
-                                <a class="J_menuItem" href="/static${children.url}" data-index="0" style="font-size: 14px;">${children.menuname }</a>
+                                <a class="J_menuItem" href="${children.url}" data-index="0" style="font-size: 14px;">${children.menuname }</a>
                             </li>
                             </c:forEach>
                         </ul>

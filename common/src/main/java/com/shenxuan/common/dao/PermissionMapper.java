@@ -23,7 +23,7 @@ public interface PermissionMapper extends BaseMapper<Permission, Permission, Per
      * @return 所有的子节点集合
      * @throws Exception
      */
-    public List<Permission> selectListByParentId(int parentId)throws Exception;
+	List<Permission> selectListByParentId(int parentId)throws Exception;
 
     /**
      * 根据角色id获取权限列表
@@ -32,7 +32,7 @@ public interface PermissionMapper extends BaseMapper<Permission, Permission, Per
      * @param roleId
      * @return
      */
-	public List<Permission> selectListByRoleId(int roleId);
+	List<Permission> selectListByRoleId(int roleId);
 	
 	/**
 	 * 根据用户id获取菜单列表
@@ -42,7 +42,7 @@ public interface PermissionMapper extends BaseMapper<Permission, Permission, Per
 	 * @return
 	 * @throws Exception
 	 */
-	public List<MenuTree> selectMenusByUserId(int userId)throws Exception;
+	List<MenuTree> selectMenusByUserId(int userId)throws Exception;
 	
 	/**
 	 * 根据用户id获取用户的所有权限
@@ -52,7 +52,7 @@ public interface PermissionMapper extends BaseMapper<Permission, Permission, Per
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Permission> findPermissionListByUserId(int userId)throws Exception;
+	List<Permission> findPermissionListByUserId(int userId)throws Exception;
 	
 	/**
 	 * 获取所有的菜单
@@ -61,7 +61,7 @@ public interface PermissionMapper extends BaseMapper<Permission, Permission, Per
 	 * @return
 	 * @throws Exception
 	 */
-	public List<MenuTree> selectAllMenus()throws Exception;
+	List<MenuTree> selectAllMenus()throws Exception;
 
-	public List<Permission> selectAll();
+	List<Permission> selectAll();
 }

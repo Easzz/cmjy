@@ -28,21 +28,21 @@
 	rel="stylesheet">
 
 <!-- Morris -->
-<link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+<link href="/static/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
 
 <!-- Gritter -->
-<link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+<link href="/static/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
 
 <link
 	href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
-<link href="css/style.min.css?v=4.1.0" rel="stylesheet">
+<link href="/static/css/style.min.css?v=4.1.0" rel="stylesheet">
 <link
-	href="${projectPath }/css/plugins/bootstrap-table/bootstrap-table.min.css"
+	href="/static/css/plugins/bootstrap-table/bootstrap-table.min.css"
 	rel="stylesheet">
 
 	<style>
-		.eyes.invisible{background-image: url(${projectPath}/images/eye.png);}
+		.eyes.invisible{background-image: url(/static/images/eye.png);}
 	</style>
 </head>
 
@@ -106,137 +106,10 @@
 		</div>
 
 		<div class="row">
-			<%--<div class="col-sm-4">
-			<div class="ibox float-e-margins">
-				<div class="ibox-title">
-					<h5>消息</h5>
-					<div class="ibox-tools">
-						<a class="collapse-link">
-							<i class="fa fa-chevron-up"></i>
-						</a>
-						<a class="close-link">
-							<i class="fa fa-times"></i>
-						</a>
-					</div>
-				</div>
-				<div class="ibox-content ibox-heading">
-					<h3><i class="fa fa-envelope-o"></i> 新消息</h3>
-					<small><i class="fa fa-tim"></i> 您有22条未读消息</small>
-				</div>
-				<div class="ibox-content">
-					<div class="feed-activity-list">
-
-						<div class="feed-element">
-							<div>
-								<small class="pull-right text-navy">1月前</small>
-								<strong>井幽幽</strong>
-								<div>
-									有人说：“一辈子很长，要跟一个有趣的人在一起”。我想关注我的人，应该是那种喜欢找乐子也乐意分享乐趣的人，你们一定挺优秀的。所以单身的应该在这条留言，互相勾搭一下。特别有钱人又帅可以直接私信我！
-								</div>
-								<small class="text-muted">4月11日 00:00</small>
-							</div>
-						</div>
-
-						<div class="feed-element">
-							<div>
-								<small class="pull-right">2月前</small>
-								<strong>马伯庸 </strong>
-								<div>又方便，又防水，手感又好，还可以用手机遥控。简直是拍戏利器，由其是跟老师们搭戏的时候…想想还有点小激动啊，嘿嘿。</div>
-								<small class="text-muted">11月8日 20:08</small>
-							</div>
-						</div>
-
-						<div class="feed-element">
-							<div>
-								<small class="pull-right">5月前</small>
-								<strong>芒果宓 </strong>
-								<div>一个完整的梦。</div>
-								<small class="text-muted">11月8日 20:08</small>
-							</div>
-						</div>
-
-						<div class="feed-element">
-							<div>
-								<small class="pull-right">5月前</small>
-								<strong>刺猬尼克索</strong>
-								<div>哈哈哈哈 你卖什么萌啊! 蠢死了</div>
-								<small class="text-muted">11月8日 20:08</small>
-							</div>
-						</div>
-
-
-						<div class="feed-element">
-							<div>
-								<small class="pull-right">5月前</small>
-								<strong>老刀99</strong>
-								<div>昨天评论里你见过最“温暖和感人”的诗句，整理其中经典100首，值得你收下学习。</div>
-								<small class="text-muted">11月8日 20:08</small>
-							</div>
-						</div>
-						<div class="feed-element">
-							<div>
-								<small class="pull-right">5月前</small>
-								<strong>娱乐小主 </strong>
-								<div>你是否想过记录自己的梦？你是否想过有自己的一个记梦本？小时候写日记，没得写了就写昨晚的梦，后来变成了习惯………翻了一晚上自己做过的梦，想哭，想笑…</div>
-								<small class="text-muted">11月8日 20:08</small>
-							</div>
-						</div>
-						<div class="feed-element">
-							<div>
-								<small class="pull-right">5月前</small>
-								<strong>DMG电影 </strong>
-								<div>《和外国男票乘地铁，被中国大妈骂不要脸》妹子实在委屈到不行，中国妹子找外国男友很令人不能接受吗？大家都来说说自己的看法</div>
-								<small class="text-muted">11月8日 20:08</small>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>--%>
 
 			<div class="col-sm-12">
 
 				<div class="row">
-				<c:if test="${not empty superSu}">
-						<div class="col-sm-4">
-							<div class="ibox float-e-margins">
-								<div class="ibox-title">
-									<h5>在线用户列表</h5>
-									<div class="ibox-tools">
-										<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
-										</a> <a class="close-link"> <i class="fa fa-times"></i>
-									</a>
-									</div>
-								</div>
-								<div class="ibox-content">
-									<table data-toggle="table" data-method="post"
-										   data-url="${projectPath }/infoEmployeeOnlineListData.action"
-										   data-content-type="application/x-www-form-urlencoded"
-										   data-query-params-type=""
-										   data-pagination="true"
-										   data-side-pagination="server"
-										   data-toolbar="#exampleToolbar"
-										   data-show-export="true"
-										   data-id-field="id"
-										   data-click-to-select="true"
-										   data-single-select="true"
-										   data-icon-size="outline"
-										   data-query-params="queryParams"
-										   data-show-footer="false"
-										   data-mobile-responsive="true">
-										<thead>
-										<tr>
-											<th data-field="realName" data-align="center">用户</th>
-											<th data-field="loginTime" data-align="center" data-formatter="ltFormatter">登录时间</th>
-											<th data-field="businessName" data-align="center" >所属企业</th>
-										</tr>
-										</thead>
-									</table>
-								</div>
-							</div>
-						</div>
-				</c:if>
 					<div class="col-sm-4">
 						<div class="ibox float-e-margins">
 							<div class="ibox-title">
@@ -246,74 +119,6 @@
 									</a> <a class="close-link"> <i class="fa fa-times"></i>
 									</a>
 								</div>
-							</div>
-							<div class="ibox-content">
-								 <%-- <table class="table table-hover no-margins">
-									<thead>
-										<tr>
-											<th width="25%" style="text-align: center;">用户</th>
-											<th width="35%" style="text-align: center;">最近登录时间</th>
-											<th width="40%" style="text-align: center;">所属企业</th>
-										</tr>
-									</thead>
-									<!-- <tbody>
-										<tr>
-											<td><small>进行中...</small></td>
-											<td><i class="fa fa-clock-o"></i> 11:20</td>
-											<td class="text-navy"><i class="fa fa-level-up"></i> 24%</td>
-										</tr>
-										<tr>
-											<td><span class="label label-warning">已取消</span></td>
-											<td><i class="fa fa-clock-o"></i> 10:40</td>
-											<td class="text-navy"><i class="fa fa-level-up"></i> 66%</td>
-										</tr>
-										<tr>
-											<td><small>进行中...</small></td>
-											<td><i class="fa fa-clock-o"></i> 01:30</td>
-											<td class="text-navy"><i class="fa fa-level-up"></i> 54%</td>
-										</tr>
-										<tr>
-											<td><span class="label label-primary">已完成</span></td>
-											<td><i class="fa fa-clock-o"></i> 04:10</td>
-											<td class="text-navy"><i class="fa fa-level-up"></i> 66%</td>
-										</tr>
-										<tr>
-											<td><small>进行中...</small></td>
-											<td><i class="fa fa-clock-o"></i> 12:08</td>
-											<td class="text-navy"><i class="fa fa-level-up"></i> 23%</td>
-										</tr>
-									</tbody> -->
-								<c:forEach items="${infoEmployeeOnlines }" var="infoEmployeeOnline" varStatus="index">
-								   <tr>
-								     <td align="center">${infoEmployeeOnline.realName }</td>
-								     <td align="center" ><i class="fa fa-clock-o"></i><fmt:formatDate value="${infoEmployeeOnline.loginTime}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
-								     <td align="center" > ${infoEmployeeOnline.businessName }</td>
-								   </tr>
-								</c:forEach>
-								</table> --%>
-								<table data-toggle="table" data-method="post"
-									data-url="${projectPath }/infoEmployeeActiveListData.action"
-									data-content-type="application/x-www-form-urlencoded"
-									data-query-params-type=""
-								   data-pagination="true"
-								   data-side-pagination="server"
-								   data-toolbar="#exampleToolbar"
-								   data-show-export="true"
-								   data-id-field="id"
-								   data-click-to-select="true"
-								   data-single-select="true"
-								   data-icon-size="outline"
-								   data-query-params="queryParams"
-								   data-show-footer="false"
-								   data-mobile-responsive="true">
-									<thead>
-										<tr>
-											<th data-field="realName" data-align="center">用户</th>
-											<th data-field="loginTime" data-align="center" data-formatter="ltFormatter">登录时间</th>
-											<th data-field="businessName" data-align="center" >所属企业</th>
-										</tr>
-									</thead>
-								</table> 
 							</div>
 						</div>
 					</div>
@@ -337,48 +142,6 @@
 									<th width="40%" style="text-align: center;">所属企业</th>
 								</tr>
 								</thead>
-							<!-- 	<tbody>
-								<tr>
-									<td>
-										张三
-									</td>
-									<td>23小时</td>
-									<td class="text-navy"><i class="fa fa-level-up"></i> 24%</td>
-								</tr>
-								<tr>
-									<td><span class="label label-warning">已取消</span>
-									</td>
-									<td><i class="fa fa-clock-o"></i> 10:40</td>
-									<td class="text-navy"><i class="fa fa-level-up"></i> 66%</td>
-								</tr>
-								<tr>
-									<td>
-										<small>进行中...</small>
-									</td>
-									<td><i class="fa fa-clock-o"></i> 01:30</td>
-									<td class="text-navy"><i class="fa fa-level-up"></i> 54%</td>
-								</tr>
-								<tr>
-									<td><span class="label label-primary">已完成</span>
-									</td>
-									<td><i class="fa fa-clock-o"></i> 04:10</td>
-									<td class="text-navy"><i class="fa fa-level-up"></i> 66%</td>
-								</tr>
-								<tr>
-									<td>
-										<small>进行中...</small>
-									</td>
-									<td><i class="fa fa-clock-o"></i> 12:08</td>
-									<td class="text-navy"><i class="fa fa-level-up"></i> 23%</td>
-								</tr>
-								</tbody> -->
-								<c:forEach items="${studySummarys }" var="studySummary" varStatus="index">
-								   <tr>
-								     <td align="center">${studySummary.name }</td>
-								     <td align="center" ><i class="fa fa-clock-o"></i><cm:timeString time="${studySummary.sumStudyTime}"/> </td>
-								     <td align="center">${studySummary.businessName }</td>
-								   </tr>
-								</c:forEach>
 							</table> 
 							</div>
 						</div>
@@ -388,24 +151,24 @@
 		</div>
 	</div>
 
-	<script src="${projectPath }/js/jquery.min.js"></script>
-	<script src="${projectPath }/js/bootstrap.min.js"></script>
-	<script src="${projectPath }/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="/static/js/jquery.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 	<script
-		src="${projectPath }/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="${projectPath }/js/plugins/layui/layer/layer.js"></script>
-	<script src="${projectPath }/js/hplus.min.js"></script>
-	<script src="${projectPath }/js/contabs.min.js"></script>
-	<script src="${projectPath }/js/plugins/pace/pace.min.js"></script>
+		src="/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="/static/js/plugins/layui/layer/layer.js"></script>
+	<script src="/static/js/hplus.min.js"></script>
+	<script src="/static/js/contabs.min.js"></script>
+	<script src="/static/js/plugins/pace/pace.min.js"></script>
 	<script
-		src="${projectPath }/js/plugins/sparkline/jquery.sparkline.min.js"></script>
+		src="/static/js/plugins/sparkline/jquery.sparkline.min.js"></script>
 	<script
-		src="${projectPath }/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		src="/static/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<script
-		src="${projectPath }/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+		src="/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
 	<script
-		src="${projectPath }/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-		<script src="${projectPath }/js/common.js"></script>
+		src="/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		<script src="/static/js/common.js"></script>
 	<script>
 		$(document).ready(function() {
 			$("#sparkline2").sparkline([ 24, 43, 43, 55, 44, 62, 44, 72 ], {

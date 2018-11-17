@@ -12,12 +12,12 @@
 
     <title>权限管理</title>
 
-    <link href="${projectPath }/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${projectPath }/css/font-awesome.min.css" rel="stylesheet">
-    <link href="${projectPath }/css/plugins/ztree/metroStyle/metroStyle.css" rel="stylesheet"/>
-    <link href="${projectPath }/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
-    <link href="${projectPath }/css/animate.min.css" rel="stylesheet">
-    <link href="${projectPath }/css/style.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/plugins/ztree/metroStyle/metroStyle.css" rel="stylesheet"/>
+    <link href="/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/style.min.css" rel="stylesheet">
 
 </head>
 
@@ -84,7 +84,7 @@
 		                            	<table id="permissionListTable" 
 		                                data-toggle="table"
 		                                data-method="post"
-		                                data-url="${projectPath }/permission/getMenuPermission.action" 
+		                                data-url="/permission/getMenuPermission.action"
 		                                data-content-type="application/x-www-form-urlencoded"
 		                                data-query-params-type=""
 								    	data-pagination="true"
@@ -123,15 +123,15 @@
 	        </div>
         </div>
     </div>
-    <script src="${projectPath }/js/jquery.min.js"></script>
-    <script src="${projectPath }/js/bootstrap.min.js"></script>
-    <script src="${projectPath }/js/content.min.js"></script>
-    <script src="${projectPath }/js/plugins/layui/layer/layer.js" ></script>
-    <script src="${projectPath }/js/plugins/bootstrap-table/bootstrap-table.min.js" ></script>
-    <script src="${projectPath }/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
-    <script src="${projectPath }/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-    <script src="${projectPath }/js/plugins/ztree/jquery.ztree.all.min.js"></script>
-    <script src="${projectPath }/js/common.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/content.min.js"></script>
+    <script src="/static/js/plugins/layui/layer/layer.js" ></script>
+    <script src="/static/js/plugins/bootstrap-table/bootstrap-table.min.js" ></script>
+    <script src="/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="/static/js/plugins/ztree/jquery.ztree.all.min.js"></script>
+    <script src="/static/js/common.js"></script>
     <script type="text/javascript">
     var setting = {
 			view: {
@@ -141,7 +141,7 @@
 				enable: true,
 				autoParam:["id"],
 				dataType:"JSON",
-				url:"${projectPath}/permission/permissionTreeJson.action"
+				url:"/permission/permissionTreeJson.action"
 			},
 			callback: {
 				onClick: function(event,treeId,treeNode){
@@ -161,7 +161,7 @@
 			type: 2, 
 			title:'添加权限',
 			area: ['800px', '550px'],
-			content: '${projectPath}/permission/permissionAdd.action?pid='+pid
+			content: '/permission/permissionAdd.action?pid='+pid
 		});
 	});
 	
@@ -175,7 +175,7 @@
 			type: 2, 
 			title:'编辑权限',
 			area: ['800px', '550px'],
-			content: '${projectPath}/permission/permissionEdit.action?id='+rows[0].id
+			content: '/permission/permissionEdit.action?id='+rows[0].id
 		});
 	});
 	
@@ -191,7 +191,7 @@
 			
 			$.ajax({
 				type:"POST",
-				url:'${projectPath}/permission/deleteList.action',
+				url:'/permission/deleteList.action',
 				data:{ids:rows[0].id},
 				success:function(data){
 					if(data.resultInfo.success){

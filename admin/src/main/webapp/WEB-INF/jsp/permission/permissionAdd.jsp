@@ -12,17 +12,17 @@
 
     <title>权限管理-添加权限</title>
 
-    <link href="${projectPath }/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${projectPath }/css/font-awesome.min.css" rel="stylesheet">
-    <link href="${projectPath }/css/animate.min.css" rel="stylesheet">
-    <link href="${projectPath }/css/style.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/style.min.css" rel="stylesheet">
 
 </head>
 
 <body>
     <div class="wrapper wrapper-content animated fadeInRight">
 
-        <form class="form-horizontal m-t" id="permissionForm" action="${projectPath }/permission/permissionAdd.action" method="post">
+        <form class="form-horizontal m-t" id="permissionForm" action="/permission/permissionAdd.action" method="post">
             <div class="form-group">
                 <label class="col-sm-3 control-label">上级权限：</label>
                 <div class="col-sm-8">
@@ -62,14 +62,14 @@
             </div>
         </form>
     </div>
-    <script src="${projectPath }/js/jquery.min.js"></script>
-    <script src="${projectPath }/js/bootstrap.min.js"></script>
-    <script src="${projectPath }/js/content.min.js"></script>
-    <script src="${projectPath }/js/plugins/validate/jquery.validate.min.js" ></script>
-    <script src="${projectPath }/js/plugins/validate/messages_zh.min.js" ></script>
-    <script src="${projectPath }/js/jquery.form.js" ></script>
-    <script src="${projectPath }/js/demo/form-validate-demo.js" ></script>
-    <script src="${projectPath }/js/common.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/content.min.js"></script>
+    <script src="/static/js/plugins/validate/jquery.validate.min.js" ></script>
+    <script src="/static/js/plugins/validate/messages_zh.min.js" ></script>
+    <script src="/static/js/jquery.form.js" ></script>
+    <script src="/static/js/demo/form-validate-demo.js" ></script>
+    <script src="/static/js/common.js"></script>
     <script type="text/javascript">
      $("#permissionForm").validate({
     	submitHandler:function(form){
