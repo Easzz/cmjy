@@ -1,5 +1,6 @@
 package com.shenxuan.common.pojo.entity;
 
+import com.baomidou.mybatisplus.annotations.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -10,6 +11,7 @@ import java.util.Date;
  * @author monkey
  * @date 2016年6月12日 上午11:56:21
  */
+@TableName("sys_user")
 public class User {
     private Integer id;
 

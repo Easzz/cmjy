@@ -1,6 +1,7 @@
+##springboot 多模块依赖 ，被依赖模块的配置文件需要写在resources/config application.yml
 #mybatis
 mybatis-plus:
-  mapper-locations: classpath:mapper/**/*.xml
+  mapper-locations: classpath*:mapper/*.xml
   #实体扫描，多个package用逗号或者分号分隔
   typeAliasesPackage: com.shenxuan.common.pojo
   global-config:
@@ -27,3 +28,8 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
     call-setters-on-nulls: true
+
+
+#文件服务器地址
+fileservice:
+  serverurl: http://192.168.250.198:8000

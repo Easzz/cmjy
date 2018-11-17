@@ -32,7 +32,6 @@ spring:
     static-locations: classpath:/
 
 
-
 logging:
   level: debug
   level.com.minxin.gzexchange: debug

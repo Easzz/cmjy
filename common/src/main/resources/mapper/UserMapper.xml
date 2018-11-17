@@ -161,7 +161,7 @@
    where u.username = #{username} and u.data_status=1
   </select>
   <!-- 根据用户名查找用户 -->
-  <select id="selectAllByUsername" resultMap="userResultMap" parameterType="string" >
+  <select id="selectAllByUsername" resultType="com.shenxuan.common.pojo.addition.UserCustom" parameterType="string" >
    select u.*,(select r.role_name from sys_role r where u.role_id = r.id) role_name
    from sys_user u 
    where u.username = #{username}
