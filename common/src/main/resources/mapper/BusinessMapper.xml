@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shenxuan.common.dao.BusinessMapper" >
+  <resultMap id="BaseResultMap" type="com.shenxuan.common.pojo.addition.BusinessCustom" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="business_name" property="businessName" jdbcType="VARCHAR" />
+    <result column="industry_id" property="industryId" jdbcType="INTEGER" />
+    <result column="business_addr" property="businessAddr" jdbcType="INTEGER" />
+    <result column="cert_pic_url" property="certPicUrl" jdbcType="VARCHAR" />
+    <result column="substation_id" property="substationId" jdbcType="INTEGER" />
+    <result column="data_status" property="dataStatus" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="legal_person" property="legalPerson" jdbcType="VARCHAR" />
+    <result column="legal_person_id_no" property="legalPersonIdNo" jdbcType="VARCHAR" />
+    <result column="city_substation_id" property="citySubstationId" jdbcType="INTEGER" />
+    <result column="industry_name" property="industryName" jdbcType="VARCHAR" />
+    <result column="substation_name" property="substationName" jdbcType="VARCHAR" />
+    <result column="city_substation_name" property="citySubstationName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, business_name, industry_id, business_addr, cert_pic_url, substation_id, data_status, 
+    create_time,legal_person,legal_person_id_no,city_substation_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    SELECT
+		businessTable.*, industryTable.`name` AS industry_name,
+		substationTable.substation_name AS substation_name
+	FROM
+		bz_business AS businessTable
+	LEFT JOIN bz_industry AS industryTable ON businessTable.industry_id = industryTable.id
+	LEFT JOIN bz_substation AS substationTable ON businessTable.substation_id = substationTable.id
+	where businessTable.id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bz_business
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="Business" useGeneratedKeys="true" keyProperty="id">
+    insert into bz_business (id, business_name, industry_id, 
+      business_addr, cert_pic_url, substation_id, 
+      data_status, create_time,legal_person,legal_person_id_no,city_substation_id)
+    values (#{id,jdbcType=INTEGER}, #{businessName,jdbcType=VARCHAR}, #{industryId,jdbcType=INTEGER}, 
+      #{businessAddr,jdbcType=INTEGER}, #{certPicUrl,jdbcType=VARCHAR}, #{substationId,jdbcType=INTEGER}, 
+      #{dataStatus,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{legalPerson,jdbcType=VARCHAR},
+       #{legalPersonIdNo,jdbcType=VARCHAR}, #{citySubstationId,jdbcType=INTEGER})
+  </insert>
+  <update id="update" parameterType="Business" >
+    update bz_business
+    <set >
+      <if test="businessName != null" >
+        business_name = #{businessName,jdbcType=VARCHAR},
+      </if>
+      <if test="industryId != null" >
+        industry_id = #{industryId,jdbcType=INTEGER},
+      </if>
+      <if test="businessAddr != null" >
+        business_addr = #{businessAddr,jdbcType=INTEGER},
+      </if>
+      <if test="certPicUrl != null" >
+        cert_pic_url = #{certPicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="substationId != null" >
+        substation_id = #{substationId,jdbcType=INTEGER},
+      </if>
+      <if test="dataStatus != null" >
+        data_status = #{dataStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      
+      <if test="legalPersonIdNo != null" >
+        legal_person_id_no = #{legalPersonIdNo,jdbcType=VARCHAR},
+      </if>
+      
+      <if test="legalPerson != null" >
+        legal_person = #{legalPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="citySubstationId != null" >
+        city_substation_id = #{citySubstationId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <select id="selectList" parameterType="businessQuery" resultMap="BaseResultMap">
+  	SELECT
+		businessTable.*, industryTable.`name` AS industry_name,
+		substationTable.substation_name AS substation_name,
+		citySubstationTable.city_substation_name AS city_substation_name
+	FROM
+		bz_business AS businessTable
+	LEFT JOIN bz_industry AS industryTable ON businessTable.industry_id = industryTable.id
+	LEFT JOIN bz_substation AS substationTable ON businessTable.substation_id = substationTable.id
+	LEFT JOIN bz_city_substation AS citySubstationTable ON businessTable.city_substation_id = citySubstationTable.id
+  	<include refid="query_Clause" />
+  	<include refid="limit_Clause" />
+  </select>
+  
+  <select id="selectListCount" parameterType="businessQuery" resultType="int">
+  	select count(*) from bz_business AS businessTable
+  	<include refid="query_Clause" />
+  </select>
+  
+  <!-- 查询条件 -->
+  <sql id="query_Clause">
+  	 <where>
+  		<if test="business !=null">
+  			 <if test="business.dataStatus !=null and business.dataStatus !=''">
+  			 and businessTable.data_status=${business.dataStatus}
+  			 </if>
+			<if test="business.industryId !=null">
+				and businessTable.industry_id=${business.industryId}
+			</if>
+		</if>
+  	</where>
+  </sql>
+  
+  <!-- 分页条件 -->
+  <sql id="limit_Clause">
+  	<if test="pageQuery !=null">
+  		limit #{pageQuery.pageStart},#{pageQuery.pageSize}
+  	</if>
+  </sql>
+</mapper>

@@ -1,7 +1,7 @@
 package com.shenxuan.common.dao;
 
-import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.shenxuan.common.pojo.addition.UserCustom;
+import com.shenxuan.common.pojo.addition.UserQuery;
 import com.shenxuan.common.pojo.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -15,7 +15,7 @@ import java.util.List;
  * @date 2017年1月4日上午11:40:08
  */
 @Mapper
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper extends BaseMapper<User, UserQuery,UserCustom> {
 
 	/**
 	 * 根据用户名查询记录数
@@ -39,6 +39,7 @@ public interface UserMapper extends BaseMapper<User> {
 
 	List<User> setlectTempList(User user);
 
+	 UserCustom selectByUsername(String username)throws Exception;
 	/**
 	 * 修改密码
 	 *
