@@ -12,17 +12,17 @@
 
     <title>用户管理-添加用户</title>
 
-    <link href="${projectPath }/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${projectPath }/css/font-awesome.min.css" rel="stylesheet">
-    <link href="${projectPath }/css/animate.min.css" rel="stylesheet">
-    <link href="${projectPath }/css/style.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/style.min.css" rel="stylesheet">
 
 </head>
 
 <body>
     <div class="wrapper wrapper-content animated fadeInRight">
 
-        <form class="form-horizontal m-t" id="userForm" action="${projectPath }/user/userAdd.action" method="post">
+        <form class="form-horizontal m-t" id="userForm" action="/user/userAdd.action" method="post">
             <div class="form-group">
                 <label class="col-sm-3 control-label">用户名：</label>
                 <div class="col-sm-8">
@@ -61,13 +61,13 @@
 		             <div class="form-group">
 		                <label class="col-sm-3 control-label">手机号：</label>
 		                <div class="col-sm-8">
-		                    <input id="realName" name="mobilePhone" class="form-control" type="text" required="required">
+		                    <input  name="mobilePhone" class="form-control" type="text" required="required">
 		                </div>
 		            </div>
 		             <div class="form-group">
 		                <label class="col-sm-3 control-label">身份证号码：</label>
 		                <div class="col-sm-8">
-		                    <input id="realName" name="certIdNum" class="form-control" type="text" required="required">
+		                    <input name="certIdNum" class="form-control" type="text" required="required">
 		                </div>
 		            </div>
             </div>
@@ -118,15 +118,15 @@
             </div>
         </form>
     </div>
-    <script src="${projectPath }/js/jquery.min.js"></script>
-    <script src="${projectPath }/js/bootstrap.min.js"></script>
-    <script src="${projectPath }/js/content.min.js"></script>
-    <script src="${projectPath }/js/plugins/validate/jquery.validate.min.js" ></script>
-    <script src="${projectPath }/js/plugins/validate/messages_zh.min.js" ></script>
-    <script src="${projectPath }/js/jquery.form.js" ></script>
-    <script src="${projectPath }/js/demo/form-validate-demo.js" ></script>
-    <script src="${projectPath }/js/plugins/ztree/jquery.ztree.all.min.js"></script>
-    <script src="${projectPath }/js/common.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/content.min.js"></script>
+    <script src="/static/js/plugins/validate/jquery.validate.min.js" ></script>
+    <script src="/static/js/plugins/validate/messages_zh.min.js" ></script>
+    <script src="/static/js/jquery.form.js" ></script>
+    <script src="/static/js/demo/form-validate-demo.js" ></script>
+    <script src="/static/js/plugins/ztree/jquery.ztree.all.min.js"></script>
+    <script src="/static/js/common.js"></script>
     <script type="text/javascript">
      $("#userForm").validate({
     	submitHandler:function(form){
@@ -149,47 +149,31 @@
         }   
     }); 
      
-     function selectChange(citySubstationId){
-     	$.ajax({
- 			type:"GET",
- 			url:'${projectPath}/business/substationByCitySubstationId.action?citySubstationId=' + citySubstationId,
- 			success:function(data){
- 				//alert(data);
- 				$("#substationId").empty();
- 				for(var i=0; i< data.length;i++){
- 				var name=data[i].substationName;
- 				$("#substationId").append( 
- 					 "<option value='" + data[i].id + "'>" + data[i].substationName + "</option>"); 
- 						
- 				}
- 			}
- 		}); 
-     }
-     
+
      function roleIdChange(value){
     	 if(value==3){
     	    document.getElementById("businessInf").style.display="";//显
     	 }else{
     	    document.getElementById("businessInf").style.display="none";//隐藏
-    		 
+
     	 }
     	 if(value==9){
     	     document.getElementById("cityId").style.display="";//显
     	 }else{
     	     document.getElementById("cityId").style.display="none";//隐藏
-    		 
+
     	 }
     	 if(value==10){
     		 document.getElementById("cityId").style.display="";
     	     document.getElementById("subId").style.display="";//显
     	 }else{
     	     document.getElementById("subId").style.display="none";//隐藏
-    		 
+
     	 }
-    	 
-    	 } 
-     
-     
+
+    	 }
+
+
      
     </script>
 </body>

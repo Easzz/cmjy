@@ -12,11 +12,11 @@
 
     <title>用户管理</title>
 
-    <link href="${projectPath }/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${projectPath }/css/font-awesome.min.css" rel="stylesheet">
-    <link href="${projectPath }/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
-    <link href="${projectPath }/css/animate.min.css" rel="stylesheet">
-    <link href="${projectPath }/css/style.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/style.min.css" rel="stylesheet">
 
 </head>
 
@@ -70,7 +70,7 @@
                                 <table id="userListTable" 
                                 data-toggle="table"
                                 data-method="post"
-                                data-url="${projectPath }/user/userListData.action" 
+                                data-url="/user/userListData.action"
                                 data-content-type="application/x-www-form-urlencoded"
                                 data-query-params-type=""
 						    	data-pagination="true"
@@ -107,14 +107,14 @@
         </div>
         <!-- End Panel Other -->
     </div>
-    <script src="${projectPath }/js/jquery.min.js"></script>
-    <script src="${projectPath }/js/bootstrap.min.js"></script>
-    <script src="${projectPath }/js/content.min.js"></script>
-    <script src="${projectPath }/js/plugins/layui/layer/layer.js" ></script>
-    <script src="${projectPath }/js/plugins/bootstrap-table/bootstrap-table.min.js" ></script>
-    <script src="${projectPath }/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
-    <script src="${projectPath }/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-    <script src="${projectPath }/js/common.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/content.min.js"></script>
+    <script src="/static/js/plugins/layui/layer/layer.js" ></script>
+    <script src="/static/js/plugins/bootstrap-table/bootstrap-table.min.js" ></script>
+    <script src="/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="/static/js/common.js"></script>
     <script type="text/javascript">
     var $userListTable = $("#userListTable");
     $(document).on('click','#add',function(){
@@ -122,7 +122,7 @@
 			type: 2, 
 			title:'<i class="glyphicon glyphicon-user"></i> 添加用户',
 			area: ['90%', '85%'],
-			content: '${projectPath}/user/userAdd.action'
+			content: '/user/userAdd.action'
 		});
 	});
     $(document).on('click','#edit',function(){
@@ -135,7 +135,7 @@
 			type: 2, 
 			title:'<i class="glyphicon glyphicon-user"></i> 编辑用户',
 			area: ['90%', '85%'],
-			content: '${projectPath}/user/userEdit.action?id='+rows[0].id
+			content: '/user/userEdit.action?id='+rows[0].id
 		});
 	});
     $(document).on('click','#del',function(){
@@ -152,7 +152,7 @@
 			})
 			$.ajax({
 				type:"POST",
-				url:'${projectPath}/user/userBatchDisable.action?' + ids,
+				url:'/user/userBatchDisable.action?' + ids,
 				success:function(data){
 					if(data.resultInfo.success){
 						$userListTable.bootstrapTable("refresh");
